@@ -38,7 +38,7 @@
         "how old are you",
         "age?"
       ],
-      "responses": ["I am 18 years old!", "18 years young!"],
+      "responses": ["I am 0 years old!", "0 years young!"],
       "context_set": ""
     },
     {
@@ -48,35 +48,23 @@
         "what should I call you",
         "whats your name?"
       ],
-      "responses": [
-        "You can call me Tim.",
-        "I'm Tim!",
-        "I'm Tim aka Tech With Tim."
-      ],
+      "responses": ["You can call me Bot.", "I'm Bot!"],
       "context_set": ""
     },
     {
-      "tag": "shop",
+      "tag": "music",
       "patterns": [
-        "Id like to buy something",
-        "whats on the menu",
-        "what do you reccommend?",
-        "could i get something to eat"
+        "what should I listen to?",
+        "what music do you recommend?",
+        "what is your favorite band?"
       ],
       "responses": [
-        "We sell chocolate chip cookies for $2!",
-        "Cookies are on the menu!"
+        "Radiohead",
+        "Swans",
+        "Coil",
+        "The Talking Heads",
+        "Gustavo Cerati"
       ],
-      "context_set": ""
-    },
-    {
-      "tag": "hours",
-      "patterns": [
-        "when are you guys open",
-        "what are your hours",
-        "hours of operation"
-      ],
-      "responses": ["We are open 7am-4pm Monday-Friday!"],
       "context_set": ""
     }
   ]

@@ -64,7 +64,7 @@ except:
     training = numpy.array(training)
     output = numpy.array(output)
 
-    with open("data.picke", "wb") as f:
+    with open("data.pickle", "wb") as f:
         pickle.dump((words, labels, training, output), f)
 
 net = tflearn.input_data(shape=[None, len(training[0])])
@@ -106,13 +106,17 @@ def chat():
         results = model.predict([bag_of_words(inp, words)])
         results_index = numpy.argmax(results)
         tag = labels[results_index]
-        responses = []
 
-        for tg in data["intents"]:
-            if tg["tag"] == tag:
-                responses = tg["responses"]
+        if results[0][results_index] >= 0.50:
+            responses = []
 
-        print(random.choice(responses))
+            for tg in data["intents"]:
+                if tg["tag"] == tag:
+                    responses = tg["responses"]
+
+            print(random.choice(responses))
+        else:
+            print("I didn't understand your question. Can you repeat it?")
 
 
 chat()
